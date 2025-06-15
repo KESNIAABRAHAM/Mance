@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Hide default password reveal icons */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-reveal,
+input[type="password"]::-webkit-clear {
+  display: none;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
