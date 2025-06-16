@@ -34,7 +34,8 @@ const Loginform: React.FC = () => {
   return (
     <div className="w-full max-w-md md:flex flex-col justify-start items-center bg-white pt-12 mt-8 mx-auto">
       <form
-       className="w-full px-4 sm:px-6 md:px-8 max-w-lg text-sm flex flex-col space-y-6 mx-auto"  onSubmit={handleSubmit}
+        className="w-full px-4 sm:px-6 md:px-8 max-w-lg text-sm flex flex-col space-y-6 mx-auto"
+        onSubmit={handleSubmit}
       >
         <h2 className="text-2xl font-medium text-black mt-8">
           Access your account

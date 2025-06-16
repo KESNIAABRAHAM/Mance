@@ -69,8 +69,7 @@ const Registerform: React.FC = () => {
     if (!passwordsMatch) newErrors.confirmpassword = "Passwords do not match";
     if (!businessname.trim())
       newErrors.businessname = "Organization name required!";
-    if (!employeenumber.trim())
-      newErrors.employeenumber = "Number of employee";
+    if (!employeenumber.trim()) newErrors.employeenumber = "Number of employee";
     if (!location.trim()) newErrors.location = "Address name is required!";
     if (!city.trim()) newErrors.city = "City name is required";
     if (!country.trim()) newErrors.country = "Country name is required";
@@ -107,7 +106,7 @@ const Registerform: React.FC = () => {
         </h2>
       </div>
       <form
-        className="w-full max-w-sm text-sm md:max-w-md lg:max-w-lg flex flex-col gap-6 mx-auto overflow-y-auto hidden-scrollbar"
+        className="w-full px-4 sm:px-6 md:px-8 max-w-lg text-sm flex flex-col space-y-6 mx-auto"
         onSubmit={handleSubmit}
       >
         <Input
@@ -186,16 +185,14 @@ const Registerform: React.FC = () => {
               error={errors.country}
               readonly={true}
             />
-        
-                <FaChevronDown
+
+            <FaChevronDown
               className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation(); // Prevents unwanted bubbling
                 setIsCountryOpen(!isCountryOpen);
               }}
             />
-            
-            
 
             {isCountryOpen && (
               <div className="absolute top-full mt-2 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto z-50">
@@ -289,7 +286,9 @@ const Registerform: React.FC = () => {
           <div className="absolute right-3 top-[46px]">
             <PasswordToggle
               showPassword={showConfirmPassword}
-              togglePassword={() => setShowConfirmPassword(!showConfirmPassword)}
+              togglePassword={() =>
+                setShowConfirmPassword(!showConfirmPassword)
+              }
             />
           </div>
         </div>
