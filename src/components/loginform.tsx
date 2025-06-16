@@ -60,7 +60,7 @@ const Loginform: React.FC = () => {
             className="w-full pr-10 mt-5"
           />
 
-          <div className="absolute right-3 top-1/2 transform translate-y-2 ">
+          <div className="absolute right-3 top-[46px]">
             <PasswordToggle
               showPassword={showPassword}
               togglePassword={() => setShowPassword(!showPassword)}

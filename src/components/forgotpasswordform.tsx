@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Input from "./input";
 import { toast, ToastContainer } from "react-toastify";
+import OtpModal from "./otpmodal";
+import NewPasswordModal from "./newpasswordmodal";
 
 const Forgotpasswordform = () => {
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ email: "" });
+  const [showOtpModal, setShowOtpModal] = useState(false); // starts open
+  const [showNewPasswordModal, setShowNewPasswordModal] = useState(false);
 
   const handleValidation = () => {
     const newErrors = { email: "", password: "" };
@@ -19,9 +23,10 @@ const Forgotpasswordform = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (handleValidation()) {
-      toast.success("Email sent check your email", {
+      toast.success("OTP sent check your email", {
         style: { backgroundColor: "teal", color: "white" },
       });
+      setShowOtpModal(true);
     }
   };
 
@@ -34,7 +39,6 @@ const Forgotpasswordform = () => {
         <h2 className="text-2xl font-medium text-black mt-8">Reset Password</h2>
 
         <p className="text-sm text-gray-600">
-          
           Enter your registered account email address & we'll send you a
           recovery OTP to reset your password e.g yourmail@gmail.com
         </p>
@@ -48,8 +52,41 @@ const Forgotpasswordform = () => {
           error={errors.email}
         />
 
-        <button type="submit" onClick={handleSubmit} className=" bg-teal-700 text-white p-3 rounded-lg cursor-pointer w-1/4"> Send</button>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className=" bg-teal-700 text-white p-3 rounded-lg cursor-pointer w-1/4"
+        >
+          {" "}
+          Send
+        </button>
         <ToastContainer />
+
+        <OtpModal
+          isOpen={showOtpModal}
+          onClose={() => setShowOtpModal(false)}
+          onSubmit={(code) => {
+            console.log("OTP submitted:", code);
+          }}
+          onSuccess={() => {
+            toast.success("OTP verified succesfully", {
+              style: { backgroundColor: "teal", color: "white" },
+            });
+            setShowOtpModal(true);
+            setTimeout(() => {
+              setShowNewPasswordModal(true);
+            }, 1000);
+          }}
+          email={email}
+        />
+
+        <NewPasswordModal
+          isOpen={showNewPasswordModal}
+          onClose={() => setShowNewPasswordModal(false)}
+          onSubmit={() => {
+            toast.success("Password reset successful!");
+          }}
+        />
       </form>
     </div>
   );

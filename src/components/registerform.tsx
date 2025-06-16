@@ -11,6 +11,7 @@ const Registerform: React.FC = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [businessname, setBusinessName] = useState("");
   const [employeenumber, setEmployeeNumber] = useState("");
   const [location, setLocationNumber] = useState("");
@@ -57,6 +58,7 @@ const Registerform: React.FC = () => {
       confirmpassword: "",
       businessname: "",
       employeenumber: "",
+      employeecount: "",
       location: "",
       city: "",
       country: "",
@@ -68,7 +70,7 @@ const Registerform: React.FC = () => {
     if (!businessname.trim())
       newErrors.businessname = "Organization name required!";
     if (!employeenumber.trim())
-      newErrors.employeenumber = "Select Number of employee";
+      newErrors.employeenumber = "Number of employee";
     if (!location.trim()) newErrors.location = "Address name is required!";
     if (!city.trim()) newErrors.city = "City name is required";
     if (!country.trim()) newErrors.country = "Country name is required";
@@ -119,14 +121,16 @@ const Registerform: React.FC = () => {
 
         <div className="relative w-full ">
           <Input
-            label=""
+            label="Number of Employees"
             type="text"
-            placeholder="Select Employee Count"
+            placeholder="Number of employees"
             value={employeenumber}
+            onChange={(e) => setEmployeeNumber(e.target.value)}
+            error={errors.employeenumber}
             readonly={true}
           />
           <FaChevronDown
-            className="absolute right-4 top-4 text-gray-500 cursor-pointer"
+            className="absolute right-4 top-[46px]  text-gray-500 cursor-pointer"
             onClick={() => setIsEmployeeOpen(!isEmployeeOpen)}
           />
 
@@ -182,13 +186,16 @@ const Registerform: React.FC = () => {
               error={errors.country}
               readonly={true}
             />
-            <FaChevronDown
-              className="absolute right-4 top-4 text-gray-500 cursor-pointer"
+        
+                <FaChevronDown
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation(); // Prevents unwanted bubbling
                 setIsCountryOpen(!isCountryOpen);
               }}
             />
+            
+            
 
             {isCountryOpen && (
               <div className="absolute top-full mt-2 left-0 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto z-50">
@@ -222,7 +229,7 @@ const Registerform: React.FC = () => {
               readonly={true}
             />
             <FaChevronDown
-              className="absolute right-4 top-4 text-gray-500 cursor-pointer"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
                 setIsStateOpen(!isStateOpen);
@@ -260,7 +267,7 @@ const Registerform: React.FC = () => {
             className="w-full pr-10 mt-5"
           />
 
-          <div className="absolute right-4 top-1/2 ">
+          <div className="absolute right-3 top-[46px]">
             <PasswordToggle
               showPassword={showPassword}
               togglePassword={() => setShowPassword(!showPassword)}
@@ -271,7 +278,7 @@ const Registerform: React.FC = () => {
         <div className="relative w-full">
           <Input
             label="Confirm Password"
-            type={showPassword ? "text" : "password"}
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="Input password"
             value={confirmpassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -279,10 +286,10 @@ const Registerform: React.FC = () => {
             className="w-full pr-10 mt-5"
           />
 
-          <div className="absolute right-4 top-1/2">
+          <div className="absolute right-3 top-[46px]">
             <PasswordToggle
-              showPassword={showPassword}
-              togglePassword={() => setShowPassword(!showPassword)}
+              showPassword={showConfirmPassword}
+              togglePassword={() => setShowConfirmPassword(!showConfirmPassword)}
             />
           </div>
         </div>
