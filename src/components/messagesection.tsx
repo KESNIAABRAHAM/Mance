@@ -1,4 +1,4 @@
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 import user from "../assets/User.png";
 function messagesection() {
   return (

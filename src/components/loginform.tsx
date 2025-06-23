@@ -4,12 +4,15 @@ import Input from "./input";
 import Button from "./button";
 import PasswordToggle from "./passwordtoggle";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Loginform: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({ email: "", password: "" });
+
+  const navigate = useNavigate();
 
   const handleValidation = () => {
     const newErrors = { email: "", password: "" };
@@ -28,6 +31,7 @@ const Loginform: React.FC = () => {
       toast.success("Succesfully logged in", {
         style: { backgroundColor: "teal", color: "white" },
       });
+  navigate("/dashboard")
     }
   };
 

@@ -69,7 +69,7 @@ const OtpModal: React.FC<OtpModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="bg-white w-[500px] p-6 rounded-lg relative shadow-lg ">
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl"
