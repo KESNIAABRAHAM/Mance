@@ -1,12 +1,9 @@
 "use client";
 
-import * as React from "react";
-import Logo from "../assets/ITH.jpg";
 import Bubble from "../assets/bubble.png";
 import { Separator } from "@/components/ui/separator";
-//import Mancelogo from "../assets/logo.svg"
-
-
+import Svglogo from "../components/svglogo";
+import ITH from "../assets/ITH.jpg"
 
 import {
   Bot,
@@ -99,7 +96,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <h1 className="text-center">IT Horizons Group</h1> */}
       <SidebarContent>
         <div className="flex items-center justify-center">
-          <img src={Logo} alt="logo" className="h-20 w-15" />
+          <img src={ITH} alt="logo"  />
         </div>
         <h1 className="text-center text-sm font-semibold data-[collapsed=true]:hidden">
           IT Horizons Group
@@ -118,11 +115,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
          <NavOrganization projects={data.myorganization}/>
         <NavSettings projects={data.settings} />
       </SidebarContent>
-      <SidebarFooter className="p-4 flex flex-col gap-4">
+      <SidebarFooter className="p-4 flex flex-col gap-4 mb-10">
          <div className="bg-[#004643] text-white rounded-lg p-4 text-sm shadow-sm">
     <div className="flex items-center gap-2 mb-2">
-    
-      
+       <Svglogo/>
     </div>
     <p className="mb-4">Get in touch with one of our experts or visit our FAQ.</p>
     <div className="flex flex-col gap-2">
