@@ -42,6 +42,10 @@ type SidebarContextProps = {
   setOpenMobile: (open: boolean) => void
   isMobile: boolean
   toggleSidebar: () => void
+   collapsed: boolean;
+  toggleCollapsed: () => void;
+ 
+  
 }
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null)
@@ -114,7 +118,11 @@ function SidebarProvider({
   // We add a state so that we can do data-state="expanded" or "collapsed".
   // This makes it easier to style the sidebar with Tailwind classes.
   const state = open ? "expanded" : "collapsed"
+const collapsed = state === "collapsed";
 
+const toggleCollapsed = () => {
+  setOpen(prev => !prev); // or however you're updating collapse state
+};
   const contextValue = React.useMemo<SidebarContextProps>(
     () => ({
       state,
@@ -124,7 +132,9 @@ function SidebarProvider({
       openMobile,
       setOpenMobile,
       toggleSidebar,
-    }),
+      collapsed,
+      toggleCollapsed
+       }),
     [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
   )
 

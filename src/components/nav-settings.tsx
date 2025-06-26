@@ -31,7 +31,7 @@ export function NavSettings({
   const { isMobile } = useSidebar()
 
   return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+    <SidebarGroup>
       <SidebarGroupLabel>SETTINGS</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (

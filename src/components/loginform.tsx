@@ -31,7 +31,13 @@ const Loginform: React.FC = () => {
       toast.success("Succesfully logged in", {
         style: { backgroundColor: "teal", color: "white" },
       });
-  navigate("/dashboard")
+      const local = email.split("@")[0];
+      const match = local.match(/[a-z]+/i);
+      const capitalized = match
+        ? match[0].charAt(0).toUpperCase() + match[0].slice(1).toLowerCase()
+        : "Guest";
+
+      navigate("/dashboard", { state: { name: capitalized } });
     }
   };
 
