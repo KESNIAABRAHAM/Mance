@@ -1,10 +1,10 @@
-import Logo from "../assets/logo.svg";
+import Svglogo from "../components/svglogo";
 import user from "../assets/User.png";
 function messagesection() {
   return (
     <div className="hidden md:flex w-1/2 bg-teal-700  flex-col justify-center items-center  text-white p-12 h-screen">
       <div className="absolute top-4 left-20">
-        <img src={Logo} alt="Icon" className="w-20 h-5" />
+        <Svglogo/>
       </div>
       <div className="justify-center text-center mb-10">
         <p className="text-lg mb-5">Message from the CPO</p>

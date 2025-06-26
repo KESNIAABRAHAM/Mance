@@ -6,7 +6,7 @@ import PasswordToggle from "./passwordtoggle";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const Registerform: React.FC = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
@@ -22,6 +22,7 @@ const Registerform: React.FC = () => {
   const [isCountryOpen, setIsCountryOpen] = useState(false); // Controls country dropdown
   const [isStateOpen, setIsStateOpen] = useState(false); // Controls state dropdown
 
+  const navigate = useNavigate()
   const hasMinLength = password.length >= 8;
   const hasUppercase = /[A-Z]/.test(password);
   const hasLowercase = /[a-z]/.test(password);
@@ -86,6 +87,7 @@ const Registerform: React.FC = () => {
       toast.success("Succesfully Registred", {
         style: { backgroundColor: "teal", color: "white" },
       });
+      navigate("/")
     }
   };
 
