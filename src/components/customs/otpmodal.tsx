@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-import Button from "../components/button";
+import Button from "@/components/customs/button";
 interface OtpModalProps {
   isOpen: boolean;
   onClose: () => void;

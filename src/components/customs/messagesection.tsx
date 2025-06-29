@@ -1,5 +1,5 @@
-import Svglogo from "../components/svglogo";
-import user from "../assets/User.png";
+import Svglogo from "@/components/customs/svglogo";
+import user from "@/assets/User.png";
 function messagesection() {
   return (
     <div className="hidden md:flex w-1/2 bg-teal-700  flex-col justify-center items-center  text-white p-12 h-screen">

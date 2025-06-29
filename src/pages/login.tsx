@@ -1,5 +1,5 @@
-import Loginform from "../components/loginform";
-import Messagesection from "../components/messagesection";
+import Loginform from "@/components/customs/loginform";
+import Messagesection from "@/components/customs/messagesection";
 
 function login() {
   return (

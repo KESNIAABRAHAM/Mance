@@ -1,5 +1,5 @@
-import Registerform from "../components/registerform";
-import Messagesection from "../components/messagesection";
+import Registerform from "@/components/customs/registerform";
+import Messagesection from "@/components/customs/messagesection";
 
 const register = () => {
   return (

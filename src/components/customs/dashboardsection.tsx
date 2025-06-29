@@ -1,15 +1,15 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import Rightsidebar from "../components/rightsidebar";
+import { AppSidebar } from "@/components/ui/app-sidebar";
+import Rightsidebar from "@/components/customs/rightsidebar";
 import { useLocation } from "react-router-dom";
 
 import { Separator } from "@/components/ui/separator";
-import pic1 from "../assets/pic1.png";
-import pic2 from "../assets/pic2.png";
-import pic3 from "../assets/pic3.png";
-import pic4 from "../assets/pic4.png";
-import pic5 from "../assets/pic5.png";
-import todo from "../assets/todo.png";
-import help from "../assets/help.png";
+import pic1 from "@/assets/pic1.png";
+import pic2 from "@/assets/pic2.png";
+import pic3 from "@/assets/pic3.png";
+import pic4 from "@/assets/pic4.png";
+import pic5 from "@/assets/pic5.png";
+import todo from "@/assets/todo.png";
+import help from "@/assets/help.png";
 
 import { MusicIcon, BellIcon } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import announce from "../assets/announce.png";
+import announce from "@/assets/announce.png";
 
 import {
   SidebarInset,

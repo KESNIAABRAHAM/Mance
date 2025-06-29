@@ -1,4 +1,4 @@
-import Dashboardsection from "../components/dashboardsection"
+import Dashboardsection from "@/components/customs/dashboardsection"
 const  dashboard = () =>  {
   return (
    <>

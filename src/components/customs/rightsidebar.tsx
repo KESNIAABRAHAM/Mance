@@ -1,6 +1,6 @@
-import Mission from "../assets/mission.png";
-import Vision from "../assets/vision.png";
-import TodoIcon from "../assets/todo.png";
+import Mission from "@/assets/mission.png";
+import Vision from "@/assets/vision.png";
+import TodoIcon from "@/assets/todo.png";
 const rightsidebar = () => {
   return (
     <div>

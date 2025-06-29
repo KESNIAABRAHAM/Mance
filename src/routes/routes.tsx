@@ -1,7 +1,7 @@
-import Login from "../pages/login"
-import Register from "../pages/register";
-import Forgotpassword from "../pages/forgotpassword";
-import Dashboard from "../pages/dashboard";
+import Login from "@/pages/login"
+import Register from "@/pages/register";
+import Forgotpassword from "@/pages/forgotpassword";
+import Dashboard from "@/pages/dashboard";
 interface RouteType {
   path: string;
   element: React.ReactNode;

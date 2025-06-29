@@ -1,15 +1,15 @@
 "use client";
 
-import Bubble from "../assets/bubble.png";
+import Bubble from "@/assets/bubble.png";
 import { Separator } from "@/components/ui/separator";
-import Svglogo from "../components/svglogo";
-import ITH from "../assets/ITH.jpg";
+import Svglogo from "@/components/customs/svglogo";
+import ITH from "@/assets/ITH.jpg";
 
 import { Bot, Frame, LayoutDashboard, Settings, Network } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavSettings } from "@/components/nav-settings";
-import { NavOrganization } from "@/components/nav-organization";
+import { NavMain } from "@/components/ui/nav-main";
+import { NavSettings } from "@/components/ui/nav-settings";
+import { NavOrganization } from "@/components/ui/nav-organization";
 
 // import { NavUser } from "@/components/nav-user";
 //import { TeamSwitcher } from "@/components/team-switcher"

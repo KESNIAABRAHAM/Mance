@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Input from "../components/input";
-import Button from "../components/button";
-import PasswordToggle from "../components/passwordtoggle";
+import Input from "@/components/customs/input";
+import Button from "@/components/customs/button";
+import PasswordToggle from "@/components/customs/passwordtoggle";
 import { toast } from "react-toastify";
 import { FaCheck } from "react-icons/fa";
 import { useNavigate} from "react-router-dom";

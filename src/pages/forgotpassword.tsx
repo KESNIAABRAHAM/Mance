@@ -1,5 +1,5 @@
-import Messagesection from "../components/messagesection";
-import Forgotpassword from "../components/forgotpasswordform";
+import Messagesection from "@/components/customs/messagesection";
+import Forgotpassword from "@/components/customs/forgotpasswordform";
 
 const forgotpasswordform = () => {
   return (
